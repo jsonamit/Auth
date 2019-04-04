@@ -1,0 +1,324 @@
+<!-- Horizontal cards start -->
+<section id="horizontal-examples">
+{{data | json}}
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="horizontal">
+                <div class="card-body">
+                    <div class="card-stacked">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-12">
+                                <div class="row">
+                                    <div class="col-xl-8 col-lg-12">
+                                        <h4 class="card-title step-four-subtitle">Choose your logo</h4>
+                                        <p style="color: #16a085;">Don't worry if you Don't have one to hand this can be added later.</p>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-12">
+                                        <div class="form-group img-input">
+                                            <div class="custom-file center-block d-block">
+                                                <input type="file" name="logo" (change)="readImage($event)" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="step3hr">
+
+                                <div class="row">
+                                    <div class="col-xl-8 col-lg-12">
+                                        <h4 class="card-title step-four-subtitle">Pick your color</h4>
+                                        <p style="color: #16a085;">Select a color for your design </p>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-12">
+                                        <div class="col color-col">
+                                            <input type="color" (change)="pickColor($event)" id="favcolor" 
+                                             style="height: 40px;" name="favcolor" value="#ff0000">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="step3hr">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-12">
+                                        <h4 class="card-title step-four-subtitle">Choose your design</h4>
+                                        <p style="color: #16a085;">Pick one of our templetes.</p>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-12">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-radio custom-control-inline float-left">
+                                                <input type="radio" checked (click)="chooseDesign('Plain')" id="customRadioInline1" name="template_design" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline1">Plain</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline  float-left">
+                                                <input type="radio" id="customRadioInline2" (click)="chooseDesign('Stripes')" name="template_design" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline2">Stripes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline  float-left">
+                                                <input type="radio" id="customRadioInline3" (click)="chooseDesign('Watermark')" name="template_design" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline3">Watermark</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="step3hr">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12">
+                                        <h4 class="card-title step-four-subtitle">Can't design your card exactly how you want it? </h4>
+                                        <p style="color: #16a085;">Don't worry this can be amended later in our advanced card designer.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5 col-lg-12" style="background:#e6e6e6;">
+
+
+                                <div class="horizontal">
+                                    <div class="card-body">
+                                        <div class="card-stacked">
+                                            <div class="row">
+
+                                                <div class="col-xl-12 col-lg-12 col-sm-12">
+
+                                                    <div class="form-group cust-radio">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="Landscape" checked (click)="cardView('Landscape')" name="card_view" class="custom-control-input">
+                                                            <label class="custom-control-label" for="Landscape">Landscape</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="Portrait" (click)="cardView('Portrait')" name="card_view" class="custom-control-input">
+                                                            <label class="custom-control-label" for="Portrait">Portrait</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Landscape design -->
+                                                <ng-container *ngIf="landscapedesign">
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="plain">
+                                                        <div class="landscape-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-7 col-lg-12 col-sm-12">
+                                                                            <div class="id-type">Student Id</div>
+
+                                                <div *ngIf="!companyLogo" class="logo-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                                </div>
+
+                                                <div *ngIf="companyLogo" class="logo-img" >
+                                                    <img [src]="companyLogo" width="100px" />
+                                                </div>
+                                                                            <div  class="id-name">Simon Sample
+                                                                           </div>
+
+                                                                        </div>
+                                                                        <div class="col-xl-5 col-lg-12 col-sm-12">
+
+                                                                            <div  class="logo-img1">
+                                                                            <img src="assets/img/avatar.png" alt="" width="100px" /></div>
+                 
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="stripe">
+                                                        <div class="landscape-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-7 col-lg-7 col-sm-12">
+
+                                                   <div *ngIf="!companyLogo" class="logo-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                                   </div>
+
+                                                                          <div *ngIf="companyLogo" class="logo-img" >
+                                                                                  <img [src]="companyLogo" width="100px" />
+                                                                             </div>
+
+                                                                                    <div class="id-type">Student Id</div>
+                                                                                </div>
+                                                                                <div class="col-xl-5 col-lg-5 col-sm-12">
+
+                                              <div  class="avtar-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                               </div>
+ 
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                                                            <hr>
+                                                                            <div style="
+									    height: 63px;
+									    max-width: 328px;
+									    margin-left: 0px;
+									    margin-top: -20px;" [style.background-color]="stripebackground" 
+                                                                            class="id-name">Simon Sample</div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="watermark">
+                                                        <div class="landscape-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-7 col-lg-7 col-sm-12">
+
+                                               <div *ngIf="!companyLogo" class="logo-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                               </div>
+                                                                             <div *ngIf="companyLogo" class="logo-img" >
+                                                                                  <img [src]="companyLogo" width="100px" />
+                                                                             </div>
+
+
+
+                                                                                    <div class="id-type">Student Id</div>
+                                                                                </div>
+                                                                                <div class="col-xl-5 col-lg-5 col-sm-12">
+                                                <div  class="avtar-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                                </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                                                            <hr>
+                                                                            <div  style="
+									    height: 63px;
+									    max-width: 328px;
+									    margin-left: 0px;
+									    margin-top: -20px;" [style.background-color]="watermarkbackground" 
+                                                                            class="id-name">Simon Sample</div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </ng-container>
+                                                <!-- Landscape design  End-->
+
+                                                <!-- Portrait design-->
+                                                <ng-container *ngIf="portraitdesign">
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="plain">
+                                                        <div class="portrait-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                               <div *ngIf="!companyLogo" class="logo-img"><img src="assets/img/avatar.png" alt="" width="100px" />
+                                                </div>
+                                                                             <div *ngIf="companyLogo" class="logo-img" >
+                                                                                  <img [src]="companyLogo" width="100px" />
+                                                                             </div>
+                                                                            <div class="id-type">Student Id</div>
+                                                                            
+                    <div  class="avtar-img"><img src="assets/img/avatar.png" alt="" width="100px" /></div>
+                                                                            <div class="id-name">Simon Sample</div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="stripe">
+                                                        <div class="portrait-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                                                            <div  *ngIf="!companyLogo" class="logo-img">
+                                                                        <img src="assets/img/avatar.png" alt="" width="100px" /></div> 
+
+                                                                         <div *ngIf="companyLogo" class="logo-img" >
+                                                                                  <img [src]="companyLogo" width="100px" />
+                                                                             </div>
+                
+                                                                            <div class="id-type">Student Id Card</div>
+                                                                            <div  class="avtar-img">
+                                                                               <img src="assets/img/avatar.png" alt="" width="100px" /></div>
+
+                                                                            <hr>
+                                                                            <div style="
+									    height: 78px;
+									    max-width: 328px;
+									    margin-left: 0px;
+									    margin-top: -20px;" [style.background-color]="portraitStripekBg"        class="id-name">Simon Sample</div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-sm-12" *ngIf="watermark">
+                                                        <div class="portrait-mode box-shadow-0">
+                                                            <div class="card-body">
+                                                                <div class="pt-3">
+                                                                    <div class="row">
+
+                                                                        <div class="col-xl-12 col-lg-12 col-sm-12">
+                                           <div *ngIf="!companyLogo" class="logo-img"><img src="assets/img/avatar.png" alt="" width="100px" /></div>
+                                            <div *ngIf="companyLogo" class="logo-img" >
+                                                     <img [src]="companyLogo" width="100px" />
+                                            </div>
+
+                                          <div  class="avtar-img"><img src="assets/img/avatar.png" alt="" width="100px" /></div>
+                                         
+                                                                            <hr>
+                                                                            <div style="
+									    height: 102px;
+									    max-width: 328px;
+									    margin-left: 0px;
+									    margin-top: -20px;" [style.background-color]="watermarkStripekBg" class="id-name">Simon Sample</div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </ng-container>
+                                                <!-- Portrait design  End-->
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

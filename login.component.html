@@ -1,0 +1,55 @@
+<!--Login Page Starts-->
+<section id="login">
+    <div class="container-fluid">
+        <div class="row full-height-vh">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card gradient-indigo-purple text-center width-400">
+                    <!--div class="card-img overlap">
+                        <!--img alt="element 06" class="mb-1" src="assets/img/logos/login-logo.png" width="190">
+                    </div-->
+                    <div class="card-body">
+                        <div class="card-block">
+                            <h2 class="white">Login</h2>
+                            <p *ngIf="showErrorMessage" style="color:red;">Email or password does't exist. </p>
+
+                            <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email" [(ngModel)]="form.email" required email #email="ngModel" />
+                                        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                                            <div class="form-text text-muted danger" *ngIf="email.errors.required">Email is required</div>
+                                            <div class="form-text text-muted danger" *ngIf="email.errors.email">Email is invalid</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password" [(ngModel)]="form.password" required #password="ngModel" />
+                                        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                                            <div class="form-text text-muted danger" *ngIf="password.errors.required">Password is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+								<!--div class="form-group">
+                                    <div class="col-md-12">
+								       <re-captcha siteKey="6LcgkooUAAAAAH92AxooRJr4yZ4rbk9laInUfXXb" id="recaptchaReactive" name="recaptchaReactive" required></re-captcha>
+								    </div>
+                                </div-->
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-pink btn-block btn-raised" [disabled]="!loginForm.valid">Login</button>
+                                        <button type="button" class="btn btn-secondary btn-block btn-raised">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- form ends/- -->
+                        </div>
+                    </div>
+                    <!-- Card body ends/- -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Login Page Ends-->
